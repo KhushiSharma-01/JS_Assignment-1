@@ -115,8 +115,11 @@ button:hover {
 
 
 .event-card {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
   background: #f1f5f9;
-  padding: 12px;
+  padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
   border-left: 5px solid #38bdf8;
@@ -166,15 +169,17 @@ button:hover {
 
 
 .delete-btn {
-  position: absolute;
-  top: 10px;
+  /* position: absolute; */
+  width: auto;
+  top: 20px;
   right: 10px;
   background: #dc3545;
   color: white;
   border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 5px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 
@@ -198,3 +203,42 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+
+/* Card ka main box */
+.event-card {
+    display: flex;
+    justify-content: space-between; /* Text left mein, Button right mein */
+    align-items: flex-start; /* Items ko upar se barabar rakhega */
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 5px solid #30bdf8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Text wala group - Isse text ek ke niche ek aayega */
+.event-info {
+    display: flex;
+    flex-direction: column; /* Vertical alignment */
+    gap: 8px; /* Lines ke beech mein space */
+    flex-grow: 1; /* Saari khali jagah ye lega */
+    text-align: left;
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    flex-shrink: 0; /* Button ko chota hone se rokega */
+    margin-left: 15px;
+}
+
+/* Heading aur Paragraphs ko clean dikhane ke liye */
+.event-info h3 { margin: 0; font-size: 1.2rem; }
+.event-info p { margin: 0; color: #555; }

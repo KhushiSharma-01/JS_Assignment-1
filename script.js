@@ -3,12 +3,12 @@ const eventTitle = document.getElementById("eventTitle");
 const eventDate = document.getElementById("eventDate");
 const eventCategory = document.getElementById("eventCategory");
 const eventDescription = document.getElementById("eventDescription");
-const eventForm = document.getElementById("eventForm");
+const eventForm = document.getElementById("eventform");
 
-const clearAllBtn = document.getElementById("clearAllBtn");
-const addSampleBtn = document.getElementById("addSampleBtn");
+const clearAllBtn = document.getElementById("clearAllbtn");
+const addSampleBtn = document.getElementById("addSamplebtn");
 const eventContainer = document.getElementById("eventContainer");
-const demoContent = document.getElementById("demoContent");
+const demoContent = document.getElementById("democontent");
 
 
 
@@ -28,7 +28,7 @@ const sampleEvent = [
 ];
 
 
-// 
+// sample events button
 addSampleBtn.addEventListener("click", () => {
     sampleEvent.forEach(addEvent);
 });
@@ -40,11 +40,14 @@ function createEventCard(eventData) {
     card.className = "event-card";
 
     card.innerHTML = `
-        <button class="delete-btn">X</button>
+    <div class="event-info">
+        
         <h3>${eventData.title}</h3>
         <div><strong>Date:</strong> ${eventData.date}</div>
         <span class="category">${eventData.category}</span>
         <p>${eventData.description}</p>
+    </div>
+    <button class="delete-btn">X</button>
     `;
 
     return card;
@@ -119,7 +122,7 @@ clearAllBtn.addEventListener("click", () => {
 
 // Add sample events
 addSampleBtn.addEventListener("click", () => {
-    sampleEvents.forEach(eventData => addEvent(eventData));
+    sampleEvent.forEach(eventData => addEvent(eventData));
 });
 
 // DOM manipulation demo
@@ -129,3 +132,8 @@ document.addEventListener("keydown", (e) => {
 
 // Initializing the statement
 showEmptyState();
+
+
+
+
+
